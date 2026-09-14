@@ -1,6 +1,0 @@
-{
-  "name": "GraySentinel Project 02 - Web Security Findings Reporter",
-  "description": "Standalone Python CLI project for Web Security Findings Reporting, Recon Integration, Evidence Management, and Risk Analysis.",
-  "requestFramePermissions": [],
-  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
-}

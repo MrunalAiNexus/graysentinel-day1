@@ -1,7 +1,0 @@
-GET /api/v1/users/1042 HTTP/1.1
-Host: lab.graysentinel.internal
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; GraySentinel-Auditor/1.0)
-Accept: application/json
-Authorization: Bearer [REDACTED_SESSION_TOKEN_GS_AUDIT_USER_1001]
-X-Requested-With: XMLHttpRequest
-Connection: close
