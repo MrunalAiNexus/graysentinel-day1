@@ -1,0 +1,14 @@
+# Keeps screenshots folder tracked in git
+# Required screenshots per Evidence Plan:
+# 01-repository-structure.png
+# 02-environment.png
+# 03-lab-target.png
+# 04-authorized-target.png
+# 05-port-enumeration.png
+# 06-http-enumeration.png
+# 07-security-headers.png
+# 08-endpoint-enumeration.png
+# 09-json-output.png
+# 10-text-report.png
+# 11-tests.png
+# 12-final-run.png

@@ -1,0 +1,30 @@
+# ==============================================================================
+# GraySentinel Cyber Defence Lab - Project 01 Dependencies
+# Candidate: Mrunal Urankar | Team: Red Team
+# Project: Authorized Web Recon & Enumeration Tool
+# ==============================================================================
+#
+# ARCHITECTURAL NOTE ON DEPENDENCIES:
+# The core reconnaissance tool (recon.py) and test lab (lab_app/app.py) are
+# intentionally engineered to run using Python 3.8+ Standard Library modules
+# (urllib.request, http.client, socket, ssl, json, argparse, unittest, time, re).
+#
+# This guarantees 100% portability in constrained lab environments, minimal Kali
+# Linux distributions, Docker containers, and offline assessment environments
+# without requiring root privileges or external pip package installations.
+#
+# The optional dependencies below provide enhanced developer experience,
+# alternative HTTP client execution, and standard test runner integration.
+# ==============================================================================
+
+# [Optional] High-level HTTP client alternative for lab tests
+# Purpose: Provides clean API for building complex test harnesses or mock clients.
+requests>=2.28.0
+
+# [Optional] Modern unit test discovery and runner
+# Purpose: Formatted test execution reports with colored diffs and coverage stats.
+pytest>=7.0.0
+
+# [Optional] Code style and PEP 8 linter
+# Purpose: Ensures static code quality and clean style enforcement for code review.
+flake8>=6.0.0

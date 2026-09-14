@@ -1,0 +1,19 @@
+# GraySentinel Cyber Defence Lab - Controlled Web Paths Wordlist
+# Project 01: Authorized Web Recon & Enumeration
+# Scope: Conservative, lab-relevant paths only. Do NOT add massive internet-scale lists.
+/
+/login
+/logout
+/register
+/admin
+/dashboard
+/api
+/api/users
+/api/v1
+/robots.txt
+/sitemap.xml
+/uploads
+/config
+/health
+/metrics
+/status

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GraySentinel Training Lab - Target Portal</title>
+  <!-- Bootstrap CSS indicator for passive technology identification -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body { background-color: #0d1117; color: #c9d1d9; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+    .card { background-color: #161b22; border-color: #30363d; }
+    .badge-lab { background-color: #238636; color: #ffffff; }
+  </style>
+</head>
+<body class="py-5">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-8">
+        <div class="card shadow-sm p-4">
+          <div class="d-flex justify-content-between align-items-center mb-3">
+            <h2 class="h4 mb-0 text-white">GraySentinel Cyber Defence Lab</h2>
+            <span class="badge badge-lab">Authorized Training Target</span>
+          </div>
+          <p class="text-secondary">
+            Candidate: <strong>Mrunal Urankar</strong> | Team: <strong>Red Team</strong><br>
+            Project 01: Authorized Web Recon &amp; Enumeration Safe Target.
+          </p>
+          <hr class="border-secondary">
+          <h5 class="text-light">Exposed Lab Endpoints</h5>
+          <ul class="list-group list-group-flush mb-3">
+            <li class="list-group-item bg-transparent text-secondary"><code>/</code> - Public landing portal (HTTP 200)</li>
+            <li class="list-group-item bg-transparent text-secondary"><code>/login</code> - Authentication interface (HTTP 200)</li>
+            <li class="list-group-item bg-transparent text-secondary"><code>/dashboard</code> - User dashboard (HTTP 302 -&gt; /login)</li>
+            <li class="list-group-item bg-transparent text-secondary"><code>/admin</code> - Administrative portal (HTTP 403 Forbidden)</li>
+            <li class="list-group-item bg-transparent text-secondary"><code>/api</code> - REST API endpoint (HTTP 200 JSON)</li>
+            <li class="list-group-item bg-transparent text-secondary"><code>/robots.txt</code> - Crawler exclusion file (HTTP 200)</li>
+            <li class="list-group-item bg-transparent text-secondary"><code>/sitemap.xml</code> - XML URL catalog (HTTP 200)</li>
+          </ul>
+          <div class="alert alert-warning mb-0 text-dark">
+            <strong>Security Scope Notice:</strong> This target is strictly for authorized training reconnaissance. Exploitation tools are not supported.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,41 @@
+# Python Bytecode and Caches
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# Virtual Environments
+.venv/
+venv/
+ENV/
+env/
+
+# Test and Coverage Artifacts
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+
+# IDE and Editor configs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Operating System Files
+.DS_Store
+Thumbs.db
+
+# Sensitive local configs
+*.local
+.env
+.env.*
+!.env.example
+
+# Temporary outputs (keep folder tracked via .gitkeep)
+output/*.json
+output/*.txt
+!output/.gitkeep
+!sample_data/sample_recon.json

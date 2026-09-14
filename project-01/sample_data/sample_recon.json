@@ -1,0 +1,441 @@
+{
+  "metadata": {
+    "tool": "GraySentinel Web Recon & Enumeration Tool",
+    "version": "1.0.0",
+    "candidate": "Mrunal Urankar",
+    "team": "Red Team",
+    "project": "Project 01 \u2014 Authorized Web Recon & Enumeration",
+    "standard": "Assigned -> Built -> Tested -> Documented -> Published -> Proven"
+  },
+  "target": {
+    "raw_input": "http://127.0.0.1:5000",
+    "normalized_url": "http://127.0.0.1:5000",
+    "base_url": "http://127.0.0.1:5000",
+    "protocol": "http",
+    "hostname": "127.0.0.1",
+    "resolved_ip": "127.0.0.1",
+    "port": 5000,
+    "path": "/",
+    "is_lab_scope": true,
+    "authorization_status": "AUTHORIZED_LAB_TARGET"
+  },
+  "network": {
+    "scan_scope": {
+      "target_ip": "127.0.0.1",
+      "total_ports_probed": 8,
+      "ports_list": [
+        22,
+        80,
+        443,
+        3000,
+        3306,
+        5000,
+        8000,
+        8080
+      ],
+      "timeout_seconds": 2.0,
+      "scan_type": "TCP Connect Probe (Sequential, Polite)"
+    },
+    "open_ports_count": 4,
+    "ports": [
+      {
+        "port": 22,
+        "state": "CLOSED",
+        "service": "SSH",
+        "latency_ms": 0.29,
+        "banner": null
+      },
+      {
+        "port": 80,
+        "state": "CLOSED",
+        "service": "HTTP (Web Server)",
+        "latency_ms": 0.06,
+        "banner": null
+      },
+      {
+        "port": 443,
+        "state": "CLOSED",
+        "service": "HTTPS (Encrypted Web)",
+        "latency_ms": 0.08,
+        "banner": null
+      },
+      {
+        "port": 3000,
+        "state": "OPEN",
+        "service": "Node.js / React Dev Server",
+        "latency_ms": 0.12,
+        "banner": "HTTP/1.1 403 Forbidden"
+      },
+      {
+        "port": 3306,
+        "state": "CLOSED",
+        "service": "MySQL / MariaDB",
+        "latency_ms": 0.06,
+        "banner": null
+      },
+      {
+        "port": 5000,
+        "state": "OPEN",
+        "service": "Flask / Python Web App",
+        "latency_ms": 0.31,
+        "banner": "HTTP/1.0 501 Unsupported method ('HEAD')"
+      },
+      {
+        "port": 8000,
+        "state": "OPEN",
+        "service": "Django / Python HTTP Server",
+        "latency_ms": 0.12,
+        "banner": "HTTP/1.0 401 Unauthorized"
+      },
+      {
+        "port": 8080,
+        "state": "OPEN",
+        "service": "HTTP-Proxy / Apache Tomcat",
+        "latency_ms": 0.11,
+        "banner": "HTTP/1.1 302 Moved Temporarily"
+      }
+    ],
+    "limitations": [
+      "TCP Connect scan requires a full 3-way handshake; host firewalls may log connection attempts.",
+      "Filtered states indicate network firewall drops or dropped packets, not necessarily closed services.",
+      "Banner grabbing is passive and unauthenticated; non-responsive services may show no banner.",
+      "UDP services and non-standard high ports are outside this conservative scope."
+    ]
+  },
+  "web": {
+    "status_code": 200,
+    "status_message": "OK",
+    "response_time_ms": 45.9,
+    "content_type": "text/html; charset=utf-8",
+    "content_length": 2698,
+    "server_header": "Werkzeug/2.2.2 Python/3.10.12",
+    "html_title": "GraySentinel Training Lab - Target Portal",
+    "final_url": "http://127.0.0.1:5000",
+    "redirect_count": 0,
+    "redirects": [],
+    "headers": {
+      "Server": "Werkzeug/2.2.2 Python/3.10.12",
+      "Date": "Mon, 14 Sep 2026 10:22:30 GMT",
+      "Content-Type": "text/html; charset=utf-8",
+      "X-Frame-Options": "SAMEORIGIN",
+      "X-Content-Type-Options": "nosniff",
+      "Referrer-Policy": "strict-origin-when-cross-origin",
+      "Set-Cookie": "session=eyJhZG1pbiI6ZmFsc2V9.Yw7n2w.9p_LAB_MOCK; HttpOnly; Path=/",
+      "Content-Length": "2698"
+    }
+  },
+  "http_methods": {
+    "method_probed": "OPTIONS",
+    "status_code": 200,
+    "allowed_methods": [
+      "GET",
+      "POST",
+      "HEAD",
+      "OPTIONS"
+    ],
+    "observation": "Target exposed Allow header: GET, POST, HEAD, OPTIONS",
+    "disclaimer": "HTTP method observation identifies supported verbs; it does not constitute vulnerability exploitation."
+  },
+  "headers": {
+    "summary": {
+      "total_evaluated": 6,
+      "present_count": 3,
+      "missing_count": 3,
+      "classification_notice": "GraySentinel Standard: Missing headers are recorded strictly as configuration observations and defense-in-depth opportunities, NOT confirmed vulnerabilities."
+    },
+    "details": [
+      {
+        "header": "Content-Security-Policy",
+        "status": "MISSING",
+        "value": null,
+        "observation": "Header was not observed in the HTTP response.",
+        "why_it_matters": "Mitigates Cross-Site Scripting (XSS) and clickjacking by restricting browser resource execution.",
+        "limitation_context": "Absence does not inherently imply exploitable XSS. Pure JSON APIs, static endpoints, or sites with strict context-aware output encoding may be secure even without CSP."
+      },
+      {
+        "header": "Strict-Transport-Security",
+        "status": "MISSING",
+        "value": null,
+        "observation": "Header is absent (Expected for plain HTTP target; only valid over HTTPS).",
+        "why_it_matters": "Forces browsers to use encrypted connections, eliminating insecure HTTP downgrade attempts.",
+        "limitation_context": "Only applicable to HTTPS targets. Not applicable to plain HTTP lab environments or local test harnesses."
+      },
+      {
+        "header": "X-Frame-Options",
+        "status": "PRESENT",
+        "value": "SAMEORIGIN",
+        "observation": "Header is configured with value: 'SAMEORIGIN'",
+        "why_it_matters": "Prevents Clickjacking attacks by forbidding the page from being framed by malicious external sites.",
+        "limitation_context": "Endpoints that do not accept user input, API endpoints returning JSON, or modern sites using CSP frame-ancestors may not require X-Frame-Options."
+      },
+      {
+        "header": "X-Content-Type-Options",
+        "status": "PRESENT",
+        "value": "nosniff",
+        "observation": "Header is configured with value: 'nosniff'",
+        "why_it_matters": "Reduces exposure to drive-by download attacks and content confusion when handling user uploads.",
+        "limitation_context": "Relevant primarily where user-uploaded content or untrusted files are served without strict server Content-Type headers."
+      },
+      {
+        "header": "Referrer-Policy",
+        "status": "PRESENT",
+        "value": "strict-origin-when-cross-origin",
+        "observation": "Header is configured with value: 'strict-origin-when-cross-origin'",
+        "why_it_matters": "Prevents accidental leakage of sensitive tokens, session IDs, or internal URLs in query parameters.",
+        "limitation_context": "Modern browsers default to 'strict-origin-when-cross-origin' even if this header is omitted."
+      },
+      {
+        "header": "Permissions-Policy",
+        "status": "MISSING",
+        "value": null,
+        "observation": "Header was not observed in the HTTP response.",
+        "why_it_matters": "Limits attack surface by disabling unnecessary high-privilege browser APIs within the application origin.",
+        "limitation_context": "Absence simply allows standard browser default permissions; does not represent an exploitable flaw by itself."
+      }
+    ]
+  },
+  "technologies": [
+    {
+      "name": "Werkzeug (Python WSGI)",
+      "category": "Web Server / WSGI",
+      "confidence": "High",
+      "evidence": "Server header: 'Werkzeug/2.2.2 Python/3.10.12'"
+    },
+    {
+      "name": "Flask",
+      "category": "Python Web Framework",
+      "confidence": "Medium",
+      "evidence": "Observable Python/Werkzeug headers: 'Werkzeug/2.2.2 Python/3.10.12'"
+    },
+    {
+      "name": "Bootstrap",
+      "category": "UI Framework",
+      "confidence": "High",
+      "evidence": "HTML references Bootstrap stylesheets/scripts or grid classes."
+    }
+  ],
+  "robots": {
+    "present": true,
+    "url": "http://127.0.0.1:5000/robots.txt",
+    "status_code": 200,
+    "parsed": {
+      "user_agents": [
+        "*"
+      ],
+      "disallowed_paths": [
+        "/admin",
+        "/dashboard",
+        "/api/"
+      ],
+      "allowed_paths": [],
+      "sitemaps_declared": [
+        "http://127.0.0.1:5000/sitemap.xml"
+      ]
+    },
+    "raw_sample": "User-agent: *\nDisallow: /admin\nDisallow: /dashboard\nDisallow: /api/\nSitemap: http://127.0.0.1:5000/sitemap.xml\n",
+    "error": null
+  },
+  "sitemap": {
+    "present": true,
+    "url": "http://127.0.0.1:5000/sitemap.xml",
+    "status_code": 200,
+    "urls_discovered": [
+      "http://127.0.0.1:5000/",
+      "http://127.0.0.1:5000/login",
+      "http://127.0.0.1:5000/register",
+      "http://127.0.0.1:5000/sitemap.xml"
+    ],
+    "url_count": 4,
+    "raw_sample": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<urlset xmlns=\"http://www.sitemaps.org/schemas/sitemap/0.9\">\n  <url><loc>http://127.0.0.1:5000/</loc></url>\n  <url><loc>http://127.0.0.1:5000/login</loc></url>\n  <url><loc>http://127.0.0.1:5000/register</loc></url>\n</urlset>\n",
+    "error": null
+  },
+  "endpoints": {
+    "wordlist_size": 15,
+    "discovered_count": 14,
+    "delay_seconds": 0.05,
+    "endpoints": [
+      {
+        "path": "/",
+        "full_url": "http://127.0.0.1:5000/",
+        "status_code": 200,
+        "reason": "OK",
+        "content_length": 2698,
+        "response_time_ms": 1.2,
+        "redirect_to": null,
+        "content_type": "text/html; charset=utf-8",
+        "category": "Accessible Resource",
+        "error": null
+      },
+      {
+        "path": "/login",
+        "full_url": "http://127.0.0.1:5000/login",
+        "status_code": 200,
+        "reason": "OK",
+        "content_length": 252,
+        "response_time_ms": 1.24,
+        "redirect_to": null,
+        "content_type": "text/html; charset=utf-8",
+        "category": "Authentication",
+        "error": null
+      },
+      {
+        "path": "/logout",
+        "full_url": "http://127.0.0.1:5000/logout",
+        "status_code": 302,
+        "reason": "Found",
+        "content_length": 0,
+        "response_time_ms": 1.17,
+        "redirect_to": "/login",
+        "content_type": "text/plain",
+        "category": "Redirect",
+        "error": null
+      },
+      {
+        "path": "/register",
+        "full_url": "http://127.0.0.1:5000/register",
+        "status_code": 200,
+        "reason": "OK",
+        "content_length": 106,
+        "response_time_ms": 1.26,
+        "redirect_to": null,
+        "content_type": "text/html; charset=utf-8",
+        "category": "Authentication",
+        "error": null
+      },
+      {
+        "path": "/admin",
+        "full_url": "http://127.0.0.1:5000/admin",
+        "status_code": 403,
+        "reason": "Forbidden",
+        "content_length": 71,
+        "response_time_ms": 1.31,
+        "redirect_to": null,
+        "content_type": "application/json",
+        "category": "Protected / Access Restricted",
+        "error": null
+      },
+      {
+        "path": "/dashboard",
+        "full_url": "http://127.0.0.1:5000/dashboard",
+        "status_code": 302,
+        "reason": "Found",
+        "content_length": 0,
+        "response_time_ms": 1.16,
+        "redirect_to": "/login",
+        "content_type": "text/plain",
+        "category": "Redirect",
+        "error": null
+      },
+      {
+        "path": "/api",
+        "full_url": "http://127.0.0.1:5000/api",
+        "status_code": 200,
+        "reason": "OK",
+        "content_length": 131,
+        "response_time_ms": 1.23,
+        "redirect_to": null,
+        "content_type": "application/json",
+        "category": "API Route",
+        "error": null
+      },
+      {
+        "path": "/api/users",
+        "full_url": "http://127.0.0.1:5000/api/users",
+        "status_code": 200,
+        "reason": "OK",
+        "content_length": 143,
+        "response_time_ms": 1.23,
+        "redirect_to": null,
+        "content_type": "application/json",
+        "category": "API Route",
+        "error": null
+      },
+      {
+        "path": "/api/v1",
+        "full_url": "http://127.0.0.1:5000/api/v1",
+        "status_code": 200,
+        "reason": "OK",
+        "content_length": 143,
+        "response_time_ms": 1.17,
+        "redirect_to": null,
+        "content_type": "application/json",
+        "category": "API Route",
+        "error": null
+      },
+      {
+        "path": "/robots.txt",
+        "full_url": "http://127.0.0.1:5000/robots.txt",
+        "status_code": 200,
+        "reason": "OK",
+        "content_length": 111,
+        "response_time_ms": 1.38,
+        "redirect_to": null,
+        "content_type": "text/plain; charset=utf-8",
+        "category": "Accessible Resource",
+        "error": null
+      },
+      {
+        "path": "/sitemap.xml",
+        "full_url": "http://127.0.0.1:5000/sitemap.xml",
+        "status_code": 200,
+        "reason": "OK",
+        "content_length": 264,
+        "response_time_ms": 1.71,
+        "redirect_to": null,
+        "content_type": "application/xml; charset=utf-8",
+        "category": "Accessible Resource",
+        "error": null
+      },
+      {
+        "path": "/uploads",
+        "full_url": "http://127.0.0.1:5000/uploads",
+        "status_code": 200,
+        "reason": "OK",
+        "content_length": 77,
+        "response_time_ms": 1.23,
+        "redirect_to": null,
+        "content_type": "text/html; charset=utf-8",
+        "category": "Accessible Resource",
+        "error": null
+      },
+      {
+        "path": "/config",
+        "full_url": "http://127.0.0.1:5000/config",
+        "status_code": 404,
+        "reason": "Not Found",
+        "content_length": 89,
+        "response_time_ms": 1.32,
+        "redirect_to": null,
+        "content_type": "text/html; charset=utf-8",
+        "category": "Administrative",
+        "error": null
+      },
+      {
+        "path": "/health",
+        "full_url": "http://127.0.0.1:5000/health",
+        "status_code": 200,
+        "reason": "OK",
+        "content_length": 57,
+        "response_time_ms": 1.19,
+        "redirect_to": null,
+        "content_type": "application/json",
+        "category": "Accessible Resource",
+        "error": null
+      },
+      {
+        "path": "/status",
+        "full_url": "http://127.0.0.1:5000/status",
+        "status_code": 200,
+        "reason": "OK",
+        "content_length": 57,
+        "response_time_ms": 1.47,
+        "redirect_to": null,
+        "content_type": "application/json",
+        "category": "Accessible Resource",
+        "error": null
+      }
+    ],
+    "rate_limiting_policy": "Polite sequential execution with configurable inter-request delay."
+  },
+  "timestamp": "2026-09-14T10:22:31.321778+00:00"
+}
