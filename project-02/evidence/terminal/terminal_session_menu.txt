@@ -1,0 +1,78 @@
+
+[96m[1m
+  ██████╗ ██████╗  █████╗ ██╗   ██╗███████╗███████╗███╗   ██╗████████╗
+ ██╔════╝ ██╔══██╗██╔══██╗╚██╗ ██╔╝██╔════╝██╔════╝████╗  ██║╚══██╔══╝
+ ██║  ███╗██████╔╝███████║ ╚████╔╝ ███████╗█████╗  ██╔██╗ ██║   ██║   
+ ██║   ██║██╔══██╗██╔══██║  ╚██╔╝  ╚════██║██╔══╝  ██║╚██╗██║   ██║   
+ ╚██████╔╝██║  ██║██║  ██║   ██║   ███████║███████╗██║ ╚████║   ██║   
+  ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝   ╚═╝   ╚══════╝╚══════╝╚═╝  ╚═══╝   ╚═╝   
+[0m
+  [97m[1mWEB SECURITY FINDINGS REPORTER // PROJECT 02 CONSOLE[0m
+  [2m[36m════════════════════════════════════════════════════[0m
+  [2mTargeting Proof-First Assessment, Evidence Integrity & Threat Modeling[0m
+
+[96m╔══[36m GRAYSENTINEL COMMAND CONSOLE [96m═════════════════════════╗[0m
+[96m║[0m [1m[97mCURRENT SESSION CONTEXT:[0m                                [96m║[0m
+[96m║[0m   • Reconnaissance Target : [2mNone (Ready to Load)[0m        [96m║[0m
+[96m║[0m   • Security Findings     : [2m0 Loaded[0m                    [96m║[0m
+[96m║[0m                                                         [96m║[0m
+[96m║[0m   [1m[96m[1][0m Load Recon Data (Project 01 JSON)                 [96m║[0m
+[96m║[0m   [1m[96m[2][0m Validate Findings (Schema & Evidence Checks)      [96m║[0m
+[96m║[0m   [1m[96m[3][0m Review Findings (Interactive Table & Detail View) [96m║[0m
+[96m║[0m   [1m[96m[4][0m Risk Summary (Posture & Threat Scoreboard)        [96m║[0m
+[96m║[0m   [1m[96m[5][0m Generate Security Report (Publication Markdown)   [96m║[0m
+[96m║[0m   [1m[96m[6][0m View Evidence (Cryptographic SHA-256 Hashes)      [96m║[0m
+[96m║[0m   [1m[96m[7][0m Demo Mode (One-Touch Sanitized Walkthrough)       [96m║[0m
+[96m║[0m   [1m[96m[8][0m Project Information & Architecture                [96m║[0m
+[96m║[0m   [1m[91m[9][0m Exit Console                                      [96m║[0m
+[96m╚═════════════════════════════════════════════════════════╝[0m
+
+[1m[97mSelect an option [1-9]: [0m[96m╔══[36m SYSTEM ARCHITECTURE & MENTOR INFO [96m═══════════════════════════════════════╗[0m
+[96m║[0m [1mGraySentinel Project 02 — Web Security Findings Reporter[0m                   [96m║[0m
+[96m║[0m Version: 2.0.0 | Python 3.10+ Standard Library Architecture                [96m║[0m
+[96m║[0m                                                                            [96m║[0m
+[96m║[0m [1mCore Objectives:[0m                                                           [96m║[0m
+[96m║[0m   1. Ingest & correlate Project 01 reconnaissance telemetry.               [96m║[0m
+[96m║[0m   2. Structure findings with CWE, OWASP, CVSS v3.1, and reproduction steps.[96m║[0m
+[96m║[0m   3. Enforce cryptographic SHA-256 evidence integrity and clear data tagging.[96m║[0m
+[96m║[0m   4. Apply strict multi-pass validation rules preventing incomplete reports.[96m║[0m
+[96m║[0m   5. Generate publication-ready 11-section Markdown assessment reports.    [96m║[0m
+[96m║[0m                                                                            [96m║[0m
+[96m║[0m [1mTesting & Quality Verification:[0m                                            [96m║[0m
+[96m║[0m   Run unit and integration tests with:                                     [96m║[0m
+[96m║[0m   [96mpython3 -m unittest discover -s project-02/tests -v[0m                      [96m║[0m
+[96m║[0m   or if pytest is installed: [96mpytest project-02/tests -v[0m                    [96m║[0m
+[96m╚════════════════════════════════════════════════════════════════════════════╝[0m
+
+[2mPress [Enter] to return to menu...[0m
+[96m[1m
+  ██████╗ ██████╗  █████╗ ██╗   ██╗███████╗███████╗███╗   ██╗████████╗
+ ██╔════╝ ██╔══██╗██╔══██╗╚██╗ ██╔╝██╔════╝██╔════╝████╗  ██║╚══██╔══╝
+ ██║  ███╗██████╔╝███████║ ╚████╔╝ ███████╗█████╗  ██╔██╗ ██║   ██║   
+ ██║   ██║██╔══██╗██╔══██║  ╚██╔╝  ╚════██║██╔══╝  ██║╚██╗██║   ██║   
+ ╚██████╔╝██║  ██║██║  ██║   ██║   ███████║███████╗██║ ╚████║   ██║   
+  ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝   ╚═╝   ╚══════╝╚══════╝╚═╝  ╚═══╝   ╚═╝   
+[0m
+  [97m[1mWEB SECURITY FINDINGS REPORTER // PROJECT 02 CONSOLE[0m
+  [2m[36m════════════════════════════════════════════════════[0m
+  [2mTargeting Proof-First Assessment, Evidence Integrity & Threat Modeling[0m
+
+[96m╔══[36m GRAYSENTINEL COMMAND CONSOLE [96m═════════════════════════╗[0m
+[96m║[0m [1m[97mCURRENT SESSION CONTEXT:[0m                                [96m║[0m
+[96m║[0m   • Reconnaissance Target : [2mNone (Ready to Load)[0m        [96m║[0m
+[96m║[0m   • Security Findings     : [2m0 Loaded[0m                    [96m║[0m
+[96m║[0m                                                         [96m║[0m
+[96m║[0m   [1m[96m[1][0m Load Recon Data (Project 01 JSON)                 [96m║[0m
+[96m║[0m   [1m[96m[2][0m Validate Findings (Schema & Evidence Checks)      [96m║[0m
+[96m║[0m   [1m[96m[3][0m Review Findings (Interactive Table & Detail View) [96m║[0m
+[96m║[0m   [1m[96m[4][0m Risk Summary (Posture & Threat Scoreboard)        [96m║[0m
+[96m║[0m   [1m[96m[5][0m Generate Security Report (Publication Markdown)   [96m║[0m
+[96m║[0m   [1m[96m[6][0m View Evidence (Cryptographic SHA-256 Hashes)      [96m║[0m
+[96m║[0m   [1m[96m[7][0m Demo Mode (One-Touch Sanitized Walkthrough)       [96m║[0m
+[96m║[0m   [1m[96m[8][0m Project Information & Architecture                [96m║[0m
+[96m║[0m   [1m[91m[9][0m Exit Console                                      [96m║[0m
+[96m╚═════════════════════════════════════════════════════════╝[0m
+
+[1m[97mSelect an option [1-9]: [0m
+[96mExiting GraySentinel Security Console. Stay secure.[0m
+

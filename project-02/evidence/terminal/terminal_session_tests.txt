@@ -1,0 +1,42 @@
+test_cli_analyze_json (test_cli.TestCLI) ... ok
+test_cli_demo (test_cli.TestCLI) ... ok
+test_cli_help (test_cli.TestCLI) ... ok
+test_cli_validate_failure (test_cli.TestCLI) ... ok
+test_cli_validate_success (test_cli.TestCLI) ... ok
+test_compute_sha256_missing_file_raises (test_evidence.TestEvidence) ... ok
+test_compute_sha256_success (test_evidence.TestEvidence) ... ok
+test_generate_manifest (test_evidence.TestEvidence) ... ok
+test_sanitization_redacts_credentials (test_evidence.TestEvidence) ... ok
+test_verify_item_integrity (test_evidence.TestEvidence) ... ok
+test_confidence_multipliers_and_parsing (test_models.TestModels) ... ok
+test_finding_to_and_from_dict_roundtrip (test_models.TestModels) ... ok
+test_severity_weights_and_parsing (test_models.TestModels) ... ok
+test_weighted_risk_calculation (test_models.TestModels) ... ok
+test_generate_candidate_findings_correlation (test_parser.TestParser) ... ok
+test_load_recon_json_file_not_found (test_parser.TestParser) ... ok
+test_load_recon_json_malformed (test_parser.TestParser) ... ok
+test_load_recon_json_missing_keys (test_parser.TestParser) ... ok
+test_load_recon_json_success (test_parser.TestParser) ... ok
+test_remediation_roadmap_phases (test_remediation.TestRemediation) ... ok
+test_remediation_synthesis_headers (test_remediation.TestRemediation) ... ok
+test_remediation_synthesis_secret_exposure (test_remediation.TestRemediation) ... ok
+test_generate_markdown_content_and_sections (test_reporter.TestReporter) ... ok
+test_save_markdown_report (test_reporter.TestReporter) ... ok
+test_critical_finding_triggers_critical_risk (test_risk.TestRisk) ... ok
+test_empty_findings_posture (test_risk.TestRisk) ... ok
+test_false_positive_excluded_from_weight (test_risk.TestRisk) ... ok
+test_weighted_risk_calculation_and_posture (test_risk.TestRisk) ... ok
+test_brief_description_rejected (test_validator.TestValidator) ... ok
+test_critical_or_high_requires_evidence (test_validator.TestValidator) ... ok
+test_cvss_score_out_of_bounds (test_validator.TestValidator) ... ok
+test_duplicate_id_detection_in_validate_all (test_validator.TestValidator) ... ok
+test_empty_or_short_title (test_validator.TestValidator) ... ok
+test_insufficient_reproduction_steps_warning (test_validator.TestValidator) ... ok
+test_missing_or_empty_id (test_validator.TestValidator) ... ok
+test_valid_finding_passes (test_validator.TestValidator) ... ok
+
+----------------------------------------------------------------------
+Ran 36 tests in 5.079s
+
+OK
+[*] pytest not detected. Executing standard unittest discovery suite...

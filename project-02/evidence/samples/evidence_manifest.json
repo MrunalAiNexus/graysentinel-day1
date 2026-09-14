@@ -1,0 +1,26 @@
+{
+  "generated_at": "1789382514.6638715",
+  "directory": "/app/applet/project-02/evidence/samples",
+  "files": {
+    "http_req_idors_redacted.txt": {
+      "sha256": "df1158ff9fea8cb88b0cd23d05ee2c0bd8bb6371f83de14aa9916c9fa860efcf",
+      "size_bytes": 276,
+      "name": "http_req_idors_redacted.txt"
+    },
+    "http_resp_idors_redacted.txt": {
+      "sha256": "fb9f7c59201e96d64132f87d37066cee31be7dc53e82a5fc1df29ea075537a26",
+      "size_bytes": 480,
+      "name": "http_resp_idors_redacted.txt"
+    },
+    "missing_security_headers.txt": {
+      "sha256": "f0f32055145e71b630b86bfcb542e4aad532d5aecaf064b72eb53e0b8b06ed9c",
+      "size_bytes": 422,
+      "name": "missing_security_headers.txt"
+    },
+    "exposed_git_env.txt": {
+      "sha256": "e9a18c6dea290236c543c9f7a05049dfb80618b1ddd691e2ece9faf10afeb879",
+      "size_bytes": 487,
+      "name": "exposed_git_env.txt"
+    }
+  }
+}
