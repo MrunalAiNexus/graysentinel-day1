@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "graysentinel-project-02"
+version = "1.0.0"
+description = "Web Security Findings Reporter CLI with Project 01 Recon Integration and Evidence Integrity Verification"
+readme = "README.md"
+requires-python = ">=3.10"
+authors = [
+    { name = "GraySentinel Security Engineer" }
+]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent",
+    "Topic :: Security",
+    "Topic :: Software Development :: Quality Assurance",
+]
+dependencies = []
+
+[project.scripts]
+gray-sentinel = "gray_sentinel.cli:main"
+graysentinel = "gray_sentinel.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]

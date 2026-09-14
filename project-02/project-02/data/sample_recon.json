@@ -1,0 +1,104 @@
+{
+  "project_id": "GS-RECON-01",
+  "target_domain": "lab.graysentinel.internal",
+  "scan_timestamp": "2026-09-12T14:30:00Z",
+  "scope_statement": "Authorized security reconnaissance against GraySentinel Web Application Lab",
+  "subdomains": [
+    "lab.graysentinel.internal",
+    "api.lab.graysentinel.internal",
+    "auth.lab.graysentinel.internal"
+  ],
+  "open_services": [
+    {
+      "port": 80,
+      "protocol": "tcp",
+      "service": "http",
+      "banner": "nginx/1.18.0 (Ubuntu)",
+      "tls": false
+    },
+    {
+      "port": 443,
+      "protocol": "tcp",
+      "service": "https",
+      "banner": "nginx/1.18.0 (Ubuntu)",
+      "tls": true
+    },
+    {
+      "port": 8080,
+      "protocol": "tcp",
+      "service": "http-api",
+      "banner": "Node.js Express Gateway",
+      "tls": false
+    }
+  ],
+  "discovered_endpoints": [
+    {
+      "path": "/api/v1/users/{id}",
+      "method": "GET",
+      "status_code": 200,
+      "parameters": ["id"],
+      "auth_required": true,
+      "notes": "User profile REST endpoint"
+    },
+    {
+      "path": "/api/v1/transfer",
+      "method": "POST",
+      "status_code": 200,
+      "parameters": ["account_to", "amount", "csrf_token"],
+      "auth_required": true,
+      "notes": "Financial transaction API"
+    },
+    {
+      "path": "/admin/dashboard",
+      "method": "GET",
+      "status_code": 403,
+      "parameters": [],
+      "auth_required": true,
+      "notes": "Restricted administrative console"
+    },
+    {
+      "path": "/.env.bak",
+      "method": "GET",
+      "status_code": 200,
+      "parameters": [],
+      "auth_required": false,
+      "notes": "Exposed backup environment file"
+    },
+    {
+      "path": "/debug/metrics",
+      "method": "GET",
+      "status_code": 200,
+      "parameters": [],
+      "auth_required": false,
+      "notes": "Application metrics endpoint"
+    },
+    {
+      "path": "/auth/login",
+      "method": "POST",
+      "status_code": 200,
+      "parameters": ["username", "password"],
+      "auth_required": false,
+      "notes": "Primary authentication entry point"
+    }
+  ],
+  "technologies": [
+    "Nginx 1.18.0",
+    "Express 4.18.2",
+    "Node.js 18.19.0",
+    "PostgreSQL 14.2"
+  ],
+  "missing_security_headers": [
+    "Content-Security-Policy",
+    "Strict-Transport-Security",
+    "X-Frame-Options",
+    "X-Content-Type-Options"
+  ],
+  "exposed_files": [
+    ".env.bak"
+  ],
+  "raw_metadata": {
+    "scanner": "GraySentinel-Recon-v1.0",
+    "environment": "lab",
+    "sanitized": true
+  }
+}
